@@ -1,0 +1,197 @@
+/* firts section*/
+.home-cakes{
+	background-image: url('smartie-rainbow-cake.jpg'); /* Replace with your image path */
+            background-size: cover;
+            background-position: center;
+            color: black;
+            text-align: center;
+            padding: 100px 20px;
+            height: 300px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+}
+.home-cakes h1 {
+            font-size: 3em;
+            margin: 0;
+            color: black;
+        }
+
+   /* Second section (Какво предлагаме?) */
+   .offer-section {
+            background-color: #fff;
+            padding: 60px 20px;
+            text-align: center;
+        }
+        .offer-section h2 {
+            color: #f28ca4;
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+        .offer-section p {
+            color: #555;
+            font-size: 1.1em;
+            margin-bottom: 40px;
+        }
+        .offer-grid {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+        .offer-item {
+            width: calc(33.333% - 20px); /* Три елемента на ред с разстояние */
+            border-radius: 5px;
+            overflow: hidden;
+            box-shadow: 0 3px 5px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        .offer-item img {
+            width: 100%;
+            height: auto;
+        }
+        .offer-item h3 {
+            background-color: #f28ca4;
+            color: #fff;
+            margin: 0;
+            padding: 15px;
+            font-size: 1.2em;
+        }
+        /* Респонсив дизайн */
+    @media (max-width: 768px) {
+        .offer-item {
+            width: calc(50% - 20px); /* три елемента на ред за по-малки екрани */
+        }
+    }
+    @media (max-width: 480px) {
+        .offer-item {
+            width: 100%; /*един елемент на ред за много малки екрани */
+        }
+    }
+	.footer {
+    background-color: #fde6ea;
+    padding: 40px 20px;
+    text-align: center;
+   }
+   .footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 20px;
+    color: #333;
+    }
+	.footer-logo h2 {
+    font-size: 24px;
+    color: #f28ca4;
+    margin: 0;
+}
+
+.footer-logo p {
+    color: #f28ca4;
+}
+
+.social-icons a {
+    display: inline-block;
+    margin: 0 5px;
+}
+
+.social-icons img {
+    width: 20px;
+    height: 20px;
+}
+
+.footer-links, .footer-contact {
+    text-align: left;
+}
+
+.footer-links h3, .footer-contact h3 {
+    color: #333;
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.footer-links ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-links ul li {
+    margin-bottom: 5px;
+}
+
+.footer-links ul li a {
+    color: #333;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.footer-links ul li a:hover {
+    color: #f28ca4;
+}
+
+.footer-contact p {
+    font-size: 14px;
+}
+
+.footer-contact i {
+    color: #f28ca4;
+    margin-right: 5px;
+}
+
+/* Респонсив дизайн за футъра */
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+.cart-sidebar {
+    position: fixed;
+    top: 0;
+    right: -300px; /* Скриване от дясната страна */
+    width: 300px;
+    height: 100%;
+    background-color: #f4f4f4;
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.5);
+    transition: right 0.3s ease;
+    z-index: 999;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+  }
+  .cart-sidebar.show {
+    right: 0;
+  }
+  .close-btn {
+    position: absolute; /* За фиксирано позициониране */
+    top: 10px; /* Разстояние от горната част */
+    right: 10px; /* Разстояние от дясната част */
+    background: none;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+
+  }
+  .shop-link {
+    margin-top: auto;
+    padding: 15px;
+    width: 90%;
+    background-color: #FF5678;
+    color: #fff;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 5px;
+    align-self: center; /* Центрира го хоризонтално */
+    font-size: 16px; /* Лесно четим текст */
+  }
+ 
+@media (max-width: 768px) {
+    .cart-sidebar {
+        width: 100%; /* За малки екрани панелът заема цялата ширина */
+    }
+    .shop-link {
+        width: 95%; /* Малко по-широк за мобилни устройства */
+    }
+
+}

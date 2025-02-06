@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+		<title>Cakes</title>
+		<style>
+		body {
+		 font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+		} 
+	.navbar {
+		background-color: #fff;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		padding: 15px 40px;
+		background-color: #fff;
+        border-bottom: 1px solid #eee;
+
+		box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+	    }
+	.logo {
+		font-size: 24px;
+		font-weight: bold;
+		color: #c45bff;
+			}
+            .nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+.dropdown{
+  position: relative;
+}
+.dropdown-menu{
+  display: none;
+    position: absolute;
+    background-color: white;
+    min-width: 150px;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    list-style: none;
+    padding: 0;
+}
+.dropdown-menu li{
+  padding: 8px 16px;
+}
+.dropdown-menu li a{
+  color: black;
+    text-decoration: none;
+    display: block;
+}
+.dropdown-menu li a:hover{
+  background-color: #f1f1f1;
+}
+.dropdown:hover .dropdown-menu{
+  display:table-cell;
+
+}
+.nav-links li a {
+	text-decoration: none;
+  color: #333;
+  font-weight: 700;
+  padding: 10px;
+  transition: color 0.3s;
+
+}
+.nav-links li a:hover {
+    color: #c45bff;
+}
+.navbar-buttons{
+    display: flex;
+  align-items: center;
+  gap: 15px;
+}
+.special-offer {
+  background-color: #ff6384; /* Може да използваш цвета, който желаеш */
+  color: #fff;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 20px;
+  cursor: pointer;
+}
+.order-now {
+  background-color: #8bc34a; /* Зелен бутон */
+  color: #fff;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 20px;
+  cursor: pointer;
+}
+.navbar-icons {
+  display: flex;
+  gap: 10px;
+}
+.footer {
+    background-color: #fde6ea;
+    padding: 40px 20px;
+    text-align: center;
+   }
+   .footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 20px;
+    color: #333;
+    }
+	.footer-logo h2 {
+    font-size: 24px;
+    color: #f28ca4;
+    margin: 0;
+}
+
+.footer-logo p {
+    color: #f28ca4;
+}
+
+.social-icons a {
+    display: inline-block;
+    margin: 0 5px;
+}
+
+.social-icons img {
+    width: 20px;
+    height: 20px;
+}
+
+.footer-links, .footer-contact {
+    text-align: left;
+}
+
+.footer-links h3, .footer-contact h3 {
+    color: #333;
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.footer-links ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-links ul li {
+    margin-bottom: 5px;
+}
+
+.footer-links ul li a {
+    color: #333;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.footer-links ul li a:hover {
+    color: #f28ca4;
+}
+
+.footer-contact p {
+    font-size: 14px;
+}
+
+.footer-contact i {
+    color: #f28ca4;
+    margin-right: 5px;
+}
+
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 20px;
+  padding: 20px;
+  background-color: #f9f9f9;
+}
+
+/* Стилове за всяка карта на продукт */
+.product-card {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  text-align: center;
+  padding: 15px;
+  position: relative;
+  transition: transform 0.3s;
+  
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+}
+
+.product-card img {
+  width: 100%;
+  height: auto;
+  border-radius: 20px;
+}
+
+.product-card h3 {
+  font-size: 1.1em;
+  color: #333;
+  margin: 10px 0;
+}
+
+.price {
+  font-size: 1.1em;
+  font-weight: bold;
+  color: #333;
+  margin: 5px 0;
+}
+
+/* Стилове за бутона "Поръчай" */
+.order-btn {
+  background-color: #8bc34a; /* Зелен бутон */
+  color: #fff;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-weight: bold;
+  
+}
+
+.order-btn:hover {
+  background-color: #7cb342;
+}
+
+/* Стилове за изчерпан продукт */
+.sold-out {
+  opacity: 0.7;
+}
+
+.sold-out .order-btn {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+       </style>
+    </head>
+    <body>
+        <nav class="navbar">
+		
+            <div class="logo">МИКИ</div>
+            
+            <ul class="nav-links" >
+                <li><a href="miki.html">Начало</a></li>
+                <li><a href="bento.html">Бенто</a></li>
+                <li class="dropdown">
+                  <a href="#cakes">Торти</a>
+                  <ul class="dropdown-menu">
+                  <li><a href="cakes.html">Стандартни торти</a></li>
+                  <li><a href="#st">Детски торти</a></li>
+                  <li><a href="#stan">Сватбени торти</a></li>
+                  </ul>
+                </li>
+                <li><a href="#party">Партита</a></li>
+                <li><a href="#about">За нас</a></li>
+                <li><a href="#contact">Контакт</a></li>
+                <li><a href="customer.html">Нашите клиенти</a></li>
+                
+            </ul>
+            <div class="navbar-buttons">
+              <button class="special-offer" ><a href="bento.html">Бенто торти</a></button>
+              <button  class="order-now"><a href="Order.html">Поръчай сега</a></button>
+                <div class="navbar-icons">
+                  <a href="#search" class="icon">🔍</a>
+                  <a href="cart.html" class="icon">🛒</a>
+                </div>
+              </div>
+        </nav>
+        <section>
+          <div class="product-grid">
+              <div class="product-card">
+                <img src="malinova.jpg" alt="Малинова торта">
+                <h3>Малинова торта</h3>
+                <p class="price">35.00 лв.</p>
+                <button class="order-btn" data-name="Малинова торта" data-price="35.00" data-image="malinova.jpg" onclick="orderCake(this)" >Поръчай</button>
+              </div>
+               <div class="product-card">
+                <img src="garash.jpg" alt="Гараш">
+                <h3>Гараш</h3>
+                <p class="price">32.00 лв.</p>
+                <button class="order-btn" data-name="Гараш" data-price="32.00" data-image="garash.jpg" onclick="orderCake(this)" >Поръчай</button>
+               </div>
+             
+              <div class="product-card">
+                <img src="blackKadife.png" alt="Черно кадифе">
+                <h3>Черно кадифе</h3>
+                <p class="price">35.00 лв.</p>
+                <button class="order-btn" data-name="Черно кадифе" data-price="35.00" data-image="blackKadife.png" onclick="orderCake(this)" >Поръчай</button>
+              </div>
+            
+              <div class="product-card">
+                <img src="Matcha.jpg" alt="Матча">
+                <h3>Матча</h3>
+                <p class="price">38.00 лв.</p>
+                <button class="order-btn" data-name="Матча" data-price="38.00" data-image="Matcha.jpg" onclick="orderCake(this)">Поръчай</button>
+              </div>
+              <div class="product-card">
+                <img src="redKadife.jpg" alt="Червено кадифе">
+                <h3>Червено кадифе</h3>
+                <p class="price">40.00 лв.</p>
+                <button class="order-btn" data-name="Червено кадифе" data-price="40.00" data-image="redKadife.jpg" onclick="orderCake(this)">Поръчай</button>
+              </div>
+              <div class="product-card">
+                <img src="choco.jpg" alt="Шоколадова торта">
+                <h3>Шоколадова торта</h3>
+                <p class="price">40.00 лв.</p>
+                <button class="order-btn"  data-name="Шоколадова торта" data-price="40.00" data-image="choco.jpg" onclick="orderCake(this)">Поръчай</button>
+              </div>
+            
+         </section>
+         <footer class="footer">
+          <div class="footer-container">
+              <div class="footer-logo">
+                  <h2>МИКИ</h2>
+                  <p>Сладкарница</p>
+                  <div class="social-icons">
+                      <a href="#"><img src=" " alt ="Facebook"></a>
+                      <a href="#"><img src=" " alt ="Instagram"></a>
+                  </div>
+              </div>
+              <!-- Бързи връзки -->
+              <div class="footer-links">
+                  <h3>Бързи връзки</h3>
+                  <ul>
+                      <li><a href="#about">За нас</a></li>
+                      <li><a href="#contact">Контакти</a></li>
+                      <li><a href="#terms">Общи условия</a></li>
+                      <li><a href="#privacy">Политика за поверителност</a></li>
+                  </ul>
+              </div>
+                    <!-- Категории -->
+                    <div class="footer-links">
+                      <h3>Категории</h3>
+                      <ul>
+                          <li><a href="#bento">Бенто торти</a></li>
+                          <li><a href="#kids">Детски торти</a></li>
+                          <li><a href="#standard">Стандартни торти</a></li>
+                          <li><a href="#holiday">Празнични торти</a></li>
+                          <li><a href="#sweets">Сладки и соленки</a></li>
+                      </ul>
+                  </div>
+                   <!-- Контакти -->
+                   <div class="footer-contact">
+                      <h3>Контакти</h3>
+                      <p><i class="icon-location"></i> бул.Санкт Петербург 63, гр. Пловдив</p>
+                      <p><i class="icon-phone"></i> 0893049845</p>
+                      <p><i class="icon-email"></i> miki@gmail.com</p>
+                      </div>
+          </div>
+      </footer>
+      <script>
+         function orderCake(button){
+          const cakeName = button.getAttribute("data-name");
+          const cakePrice = button.getAttribute("data-price");
+          const cakeImage = button.getAttribute("data-image");
+          const url = `Order.html?name=${encodeURIComponent(cakeName)}
+          &price=${encodeURIComponent(cakePrice)}
+          &image=${encodeURIComponent(cakeImage)}`;
+          window.location.href = url;
+        }
+      </script>
+    </body>
+</html>

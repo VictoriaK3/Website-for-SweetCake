@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html>
+ <head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sweet Shop</title>
+	<style>
+	body {
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-color: purple;
+	background-position: center;
+	font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+	}
+	.navbar {
+		background-color: #fff;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		padding: 15px 40px;
+		background-color: #fff;
+        border-bottom: 1px solid #eee;
+
+		box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+	    }
+	.logo {
+		font-size: 24px;
+		font-weight: bold;
+		color: #c45bff;
+			}
+			.dropdown{
+  position: relative;
+}
+.dropdown-menu{
+  display: none;
+    position: absolute;
+    background-color: white;
+    min-width: 150px;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    list-style: none;
+    padding: 0;
+}
+.dropdown-menu li{
+  padding: 8px 16px;
+}
+.dropdown-menu li a{
+  color: black;
+    text-decoration: none;
+    display: block;
+}
+.dropdown-menu li a:hover{
+  background-color: #f1f1f1;
+}
+.dropdown:hover .dropdown-menu{
+  display:table-cell;
+
+}
+	.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+.nav-links li a {
+	text-decoration: none;
+  color: #333;
+  font-weight: 700;
+  padding: 10px;
+  transition: color 0.3s;
+
+}
+.nav-links li a:hover {
+    color: #c45bff;
+}
+.navbar-buttons{
+    display: flex;
+  align-items: center;
+  gap: 15px;
+}
+.special-offer {
+  background-color: #ff6384; /* Може да използваш цвета, който желаеш */
+  color: #fff;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 20px;
+  cursor: pointer;
+}
+.order-now {
+  background-color: #8bc34a; /* Зелен бутон */
+  color: #fff;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 20px;
+  cursor: pointer;
+}
+.navbar-icons {
+  display: flex;
+  gap: 10px;
+}
+
+.icon {
+  font-size: 18px;
+  color: #333;
+  text-decoration: none;
+}
+
+.icon:hover {
+  color: #ff6384;
+}
+.order-container {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+        .order-image {
+            width: 200px;
+            height: auto;
+            border-radius: 10px;
+        }
+        .order-details {
+            font-size: 1.2em;
+        }
+        .order-details h3 {
+            margin: 0;
+            font-size: 1.5em;
+            color: #333;
+        }
+        .order-details p {
+            margin: 5px 0;
+            color: #555;
+        }
+
+
+@media (max-width: 768px) {
+    .navbar-menu {
+        flex-direction: column; 
+        align-items: center;
+        gap: 10px;
+    }
+}
+
+	</style>
+		<link rel="stylesheet" href="order.css">
+ </head>
+ <body>
+   
+	<nav class="navbar">
+		
+		<div class="logo">МИКИ</div>
+		
+		<ul class="nav-links" >
+			<li><a href="miki.html">Начало</a></li>
+			<li><a href="bento.html">Бенто</a></li>
+            <li class="dropdown">
+                <a href="#cakes">Торти</a>
+                <ul class="dropdown-menu">
+                <li><a href="cakes.html">Стандартни торти</a></li>
+                <li><a href="#st">Детски торти</a></li>
+                <li><a href="#stan">Сватбени торти</a></li>
+                </ul>
+              </li>
+            <li><a href="#party">Партита</a></li>
+			<li><a href="#about">За нас</a></li>
+            <li><a href="#contact">Контакт</a></li>
+            <li><a href="customer.html">Нашите клиенти</a></li>
+			
+		</ul>
+		<div class="navbar-buttons">
+			<button class="special-offer" ><a href="bento.html">Бенто торти</a></button>
+			<button  class="order-now"><a href="Order.html">Поръчай сега</a></button>
+			<div class="navbar-icons">
+			  <a href="#search" class="icon">🔍</a>
+			  <a href="cart.html" class="icon">🛒</a>
+			</div>
+		  </div>
+	  
+	</nav>
+	<section class="order-form" >
+		<h1>Адрес на фактуриране</h1>
+		<form id="form-order" action ="form.php" method="POST" enctype="multipart/form-data" onsubmit="return validateForm()">
+      <div class="form-group">
+        <label for = "fname">Име *</label><br>
+        <input type = "text" id ="fname" name ="fname"  placeholder="Вашето име" required><br>
+      </div>
+			<div class="form-group">
+        <label for = "lname">Фамилия *</label><br>
+			<input type = "text" id ="lname" name ="lname" placeholder="Вашата фамилия" required >
+      
+      </div>
+      <div class="form-group">
+        <label for = "tel">Номер *</label><br>
+			<input type = "text" id ="tel" name ="tel" placeholder="Номер за контакт" required >
+      </div>
+      <div class="form-group">
+        <label for="email">Имейл *</label>
+        <input type="email" id="email" name="email" placeholder="Имейл адрес" required>
+      </div>
+
+      <div class="form-group">
+        <label for="delivery-date">Дата за доставка *</label>
+        <input type="date" id="delivery-date" name="delivery-date" required>
+      </div>
+      <div class="form-group">
+        <label for="note">Желан надпис или бележка:</label><br>
+        <textarea id="note" name="note" placeholder="Напишете вашия надпис или бележка тук..."></textarea>
+    </div>
+    
+       <!-- Детайли за поръчка -->
+       <h1>Детайли за поръчката</h1>
+       <div class="order-container">
+           <img id="cakeImage" class="order-image" src="" alt="Торта">
+           <div class="order-details">
+               <h3 id="cakeName"></h3>
+               <p>Цена: <span id="cakePrice"></span> лв.</p>
+           </div>
+       </div>
+   
+      <button type="submit">Изпрати</button>
+		</form>
+	</section>
+	<script>
+    let nameCake = '';
+    let priceCake = '';
+    let imageCake = '';
+
+   // Функция за извличане на параметри от URL
+   function getQueryParams() {
+            const params = new URLSearchParams(window.location.search);
+            return {
+                name: params.get('name'),
+                price: params.get('price'),
+                image: params.get('image')
+            };
+        }
+
+        // Зареждане на информацията
+        document.addEventListener("DOMContentLoaded", function () {
+            const queryParams = getQueryParams();
+            
+            nameCake = queryParams.name;
+            priceCake = queryParams.price;
+            imageCake = queryParams.image;
+
+            if (queryParams.name && queryParams.price && queryParams.image) {
+                document.getElementById('cakeName').textContent = queryParams.name;
+                document.getElementById('cakePrice').textContent = queryParams.price;
+                document.getElementById('cakeImage').src = queryParams.image;
+            } else {
+                document.body.innerHTML = '<p>Неуспешно зареждане на детайлите за поръчката.</p>';
+            }
+        });
+        
+    function validateForm(){
+      const fname = document.getElementById("fname").value;
+      const lname = document.getElementById("lname").value;
+      const tel   = document.getElementById("tel").value;
+      const email = document.getElementById("email").value;
+      const data = document.getElementById("delivery-date").value;
+      const note = document.getElementById("note").value || "";
+      
+
+      const nameRegex = /(^[A-Z][a-z]+(-[A-Z][a-z]+)?$)|(^[А-Я][а-я]+(-[А-Я][а-я]+)?$)/;
+      const phoneRegex = /(0|\+359)(89|88|87)[0-9]{7}/;
+      const emailRegex = /\w(_|.)?@{1}(gmail.com|abv.bg){1}$/;
+     
+   
+      if(!nameRegex.test(fname)){
+        alert("Моля, въведете валидно име (само букви, поне 2 знака).");
+        return false;
+      }
+      if(!nameRegex.test(lname)){
+        alert("Моля, въведете валидна фамилия (само букви, поне 2 знака).");
+            return false;
+      }
+      if(!phoneRegex.test(tel)){
+        alert("Моля, въведете валиден телефонен номер.");
+            return false;
+      }
+      if (!emailRegex.test(email)) {
+            alert("Моля, въведете валиден имейл адрес.");
+            return false;
+        }
+        alert("Формата е валидна и може да бъде изпратена!");
+        sendOrderToServer(fname, lname, tel, email, data,note, nameCake,priceCake, imageCake);
+        return true;
+    }
+    
+    function sendOrderToServer(fname, lname, tel, email, deliveryDate,note, 
+            cakeName, cakePrice, cakeImage) {
+            const xhr = new XMLHttpRequest();
+            xhr.open('POST', 'orders.php?name=' + encodeURIComponent(cakeName) + 
+                                        '&price=' + encodeURIComponent(cakePrice) +
+                                        '&image=' + encodeURIComponent(cakeImage), true);
+            xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+            
+            xhr.send('fname=' + encodeURIComponent(fname) +
+                    '&lname=' + encodeURIComponent(lname) +
+                    '&tel=' + encodeURIComponent(tel) +
+                    '&email=' + encodeURIComponent(email) +
+                    '&delivery-date=' + encodeURIComponent(deliveryDate)+
+                    '&note=' + encodeURIComponent(note || "")) ;
+
+
+            
+            xhr.onload = function() {
+              console.log("Отговор от сървъра:", xhr.responseText);
+                if (xhr.status === 200) {
+                    alert("Поръчката е успешно записана!");
+                } else {
+                    alert("Грешка при записването на поръчката.");
+                }
+             };
+         }  
+
+  </script>
+</body>
+ </html>
+ 

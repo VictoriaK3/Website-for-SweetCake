@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Качване на изображение и отзив</title>
+    <style>
+        body {
+            background-color: #ffe4e1;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+        .navbar {
+		background-color: #fff;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		padding: 15px 40px;
+		background-color: #fff;
+        border-bottom: 1px solid #eee;
+
+		box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+	    }
+	.logo {
+		font-size: 24px;
+		font-weight: bold;
+		color: #c45bff;
+			}
+			.dropdown{
+  position: relative;
+}
+.dropdown-menu{
+  display: none;
+    position: absolute;
+    background-color: white;
+    min-width: 150px;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    list-style: none;
+    padding: 0;
+}
+.dropdown-menu li{
+  padding: 8px 16px;
+}
+.dropdown-menu li a{
+  color: black;
+    text-decoration: none;
+    display: block;
+}
+.dropdown-menu li a:hover{
+  background-color: #f1f1f1;
+}
+.dropdown:hover .dropdown-menu{
+  display:table-cell;
+
+}
+	.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+.nav-links li a {
+	text-decoration: none;
+  color: #333;
+  font-weight: 700;
+  padding: 10px;
+  transition: color 0.3s;
+
+}
+.nav-links li a:hover {
+    color: #c45bff;
+}
+.navbar-buttons{
+    display: flex;
+  align-items: center;
+  gap: 15px;
+}
+.special-offer {
+  background-color: #ff6384; /* Може да използваш цвета, който желаеш */
+  color: #fff;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 20px;
+  cursor: pointer;
+}
+.order-now {
+  background-color: #8bc34a; /* Зелен бутон */
+  color: #fff;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 20px;
+  cursor: pointer;
+}
+.navbar-icons {
+  display: flex;
+  gap: 10px;
+}
+
+.icon {
+  font-size: 18px;
+  color: #333;
+  text-decoration: none;
+}
+
+.icon:hover {
+  color: #ff6384;
+}
+
+        h2 {
+            color: #c45bff;
+            margin-top: 50px;
+        }
+        form {
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            display: inline-block;
+            margin-top: 20px;
+        }
+        form label {
+            display: block;
+            font-size: 18px;
+            color: #555;
+            margin-bottom: 10px;
+        }
+        form input[type="file"], form textarea, form input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        form button {
+            background-color: #c45bff;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        form button:hover {
+            background-color: #a537d4;
+        }
+    </style>
+</head>
+<body>
+
+<!-- Навигационна лента -->
+<nav class="navbar">
+		
+    <div class="logo">МИКИ</div>
+    
+    <ul class="nav-links" >
+        <li><a href="miki.html">Начало</a></li>
+        <li><a href="bento.html">Бенто</a></li>
+        <li class="dropdown">
+            <a href="#cakes">Торти</a>
+            <ul class="dropdown-menu">
+            <li><a href="cakes.html">Стандартни торти</a></li>
+            <li><a href="#st">Детски торти</a></li>
+            <li><a href="#stan">Сватбени торти</a></li>
+            </ul>
+          </li>
+        <li><a href="#party">Партита</a></li>
+        <li><a href="#about">За нас</a></li>
+        <li><a href="#contact">Контакт</a></li>
+        <li><a href="customer.html">Нашите клиенти</a></li>
+        
+    </ul>
+    <div class="navbar-buttons">
+        <button class="special-offer" ><a href="bento.html">Бенто торти</a></button>
+        <button  class="order-now"><a href="Order.html">Поръчай сега</a></button>
+       
+      </div>
+</nav>
+
+
+<!-- Заглавие -->
+<h2>Качете своята снимка и оставете отзив</h2>
+
+<!-- Форма за качване на снимка -->
+<form action="upload.php" method="post" enctype="multipart/form-data">
+    <label for="file">Изберете изображение:</label>
+    <input type="file" name="fileUp" id="file" accept="image/*" required>
+
+    <label for="name">Вашето име:</label>
+    <input type="text" name="name" id="name" >
+
+    <label for="review">Вашият отзив:</label>
+    <textarea name="review" id="review" rows="4" placeholder="Напишете вашия отзив..." ></textarea>
+
+    <button type="submit">Качване</button>
+</form>
+
+</body>
+</html>

@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+		<title>Sweet Shop</title>
+		<style>
+		body {
+		 font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+		} 
+		body.shifted{
+			transform: translateX(-300px);
+			transition: 0.3s ease;
+			overflow-x: hidden;
+
+		}
+	.navbar {
+		background-color: #fff;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		padding: 15px 40px;
+		background-color: #fff;
+        border-bottom: 1px solid #eee;
+		box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+	    }
+	.logo {
+		font-size: 24px;
+		font-weight: bold;
+		color: #c45bff;
+			}
+			.dropdown{
+  position: relative;
+}
+.dropdown-menu{
+  display: none;
+    position: absolute;
+    background-color: white;
+    min-width: 150px;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    list-style: none;
+    padding: 0;
+}
+.dropdown-menu li{
+  padding: 8px 16px;
+}
+.dropdown-menu li a{
+  color: black;
+    text-decoration: none;
+    display: block;
+}
+.dropdown-menu li a:hover{
+  background-color: #f1f1f1;
+}
+.dropdown:hover .dropdown-menu{
+  display:table-cell;
+
+}
+	.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+.nav-links li a {
+	text-decoration: none;
+  color: #333;
+  font-weight: 700;
+  padding: 10px;
+  transition: color 0.3s;
+
+}
+.nav-links li a:hover {
+    color: #c45bff;
+}
+.navbar-buttons{
+    display: flex;
+  align-items: center;
+  gap: 15px;
+}
+.special-offer {
+  background-color: #ff6384; /* Може да използваш цвета, който желаеш */
+  color: #fff;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 20px;
+  cursor: pointer;
+}
+.order-now {
+  background-color: green; 
+  color: #fff;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 20px;
+  cursor: pointer;
+}
+.navbar-icons {
+  display: flex;
+  gap: 10px;
+}
+
+.icon {
+  font-size: 18px;
+  color: #333;
+  text-decoration: none;
+}
+
+.icon:hover {
+  color: #ff6384;
+}
+
+@media (max-width: 768px) {
+    .navbar-menu {
+        flex-direction: column; 
+        align-items: center;
+        gap: 10px;
+    }
+}
+
+		</style>
+		<link rel="stylesheet" href="miki.css">
+ </head>
+ <body>
+	
+	
+	<nav class="navbar">
+		
+		<div class="logo">МИКИ</div>
+		
+		<ul class="nav-links" >
+			<li><a href="miki.html">Начало</a></li>
+			<li><a href="bento.html">Бенто</a></li>
+            <li class="dropdown">
+                <a href="#cakes">Торти</a>
+                <ul class="dropdown-menu">
+                <li><a href="cakes.html">Стандартни торти</a></li>
+                <li><a href="#st">Детски торти</a></li>
+                <li><a href="#stan">Сватбени торти</a></li>
+                </ul>
+              </li>
+            <li><a href="#party">Партита</a></li>
+			<li><a href="#about">За нас</a></li>
+            <li><a href="#contact">Контакт</a></li>
+			<li><a href="customer.html">Нашите клиенти</a></li>
+			
+		</ul>
+		<div class="navbar-buttons">
+			<button class="special-offer" ><a href="bento.html">Бенто торти</a></button>
+			<button  class="order-now"><a href="cakes.html">Поръчай сега</a></button>
+			<div class="navbar-icons">
+			  <a href="#search" class="icon">🔍</a>
+			  
+			</div>
+		  </div>
+	  
+	</nav>
+	
+		<!-- First section -->
+	<section class ="home-cakes">
+		<h1>Поръчай домашни торни с истински продукти</h1>
+		
+	</section>
+   <!-- Second section -->
+	<section class="offer-section">
+		<h2>Какво предлагаме?</h2>
+        <p>Разнообразие от ръчно направени торти, сладки и соленки с качествени продукти и много любов.</p>
+		<div class="offer-grid">
+			<div class="offer-item">
+				<img src ="wedding.jpg" alt="Сватбени торти">
+				<h3>Сватбени торти</h3>
+			</div>
+			<div class="offer-item">
+				<img src ="bento23.jpg" alt="Бенто">
+				<h3>Бенто</h3>
+			</div>
+			<div class="offer-item">
+                <img src="kids1.jpg" alt="Детски торти">
+                <h3>Детски торти</h3>
+            </div>
+			<div class="offer-item">
+				<img src ="tartaleti.jpg" alt="Тарталети">
+				<h3>Тарталети</h3>
+			</div>
+			<div class="offer-item">
+				<img src ="Matcha.jpg" alt="торти стандарт">
+				<h3>Стандартни торти</h3>
+			</div>
+			<div class="offer-item">
+                <img src="mufin.jpg" alt="mufin">
+                <h3>Мъфини</h3>
+            </div>
+		</div>
+	</section>
+
+<footer class="footer">
+	<div class="footer-container">
+		<div class="footer-logo">
+			<h2>МИКИ</h2>
+            <p>Сладкарница</p>
+			<div class="social-icons">
+				<a href="#"><img src=" " alt ="Facebook"></a>
+				<a href="#"><img src=" " alt ="Instagram"></a>
+			</div>
+		</div>
+		<!-- Бързи връзки -->
+        <div class="footer-links">
+            <h3>Бързи връзки</h3>
+            <ul>
+                <li><a href="#about">За нас</a></li>
+                <li><a href="#contact">Контакти</a></li>
+                <li><a href="#terms">Общи условия</a></li>
+                <li><a href="#privacy">Политика за поверителност</a></li>
+            </ul>
+        </div>
+              <!-- Категории -->
+			  <div class="footer-links">
+				<h3>Категории</h3>
+				<ul>
+					<li><a href="#bento">Бенто торти</a></li>
+					<li><a href="#kids">Детски торти</a></li>
+					<li><a href="#standard">Стандартни торти</a></li>
+					<li><a href="#holiday">Празнични торти</a></li>
+					<li><a href="#sweets">Сладки и соленки</a></li>
+				</ul>
+			</div>
+			 <!-- Контакти -->
+			 <div class="footer-contact">
+				<h3>Контакти</h3>
+				<p><i class="icon-location"></i> бул.Санкт Петербург 63, гр. Пловдив</p>
+				<p><i class="icon-phone"></i> 0893049845</p>
+				<p><i class="icon-email"></i> miki@gmail.com</p>
+				</div>
+	</div>
+</footer>
+ </body>
+ </html>
+ 
